@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring JPA JS Template</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#6b7280',
+                        success: '#10b981',
+                        danger: '#ef4444',
+                        warning: '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-gray-800 border-b border-gray-700 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-6">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-white">Spring JPA JS Template</h1>
+                </div>
+                <nav class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                        Home
+                    </a>
+                    <a href="/h2-console" target="_blank" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                        H2 Console
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Form Section -->
+            <div class="card">
+                <h2 class="text-xl font-semibold mb-4 text-white">Create Sample Entity</h2>
+                <form id="entity-form" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">
+                            Name
+                        </label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required
+                            class="form-input"
+                            placeholder="Enter entity name"
+                        >
+                    </div>
+                    <div>
+                        <label for="description" class="block text-sm font-medium text-gray-300 mb-2">
+                            Description
+                        </label>
+                        <textarea 
+                            id="description" 
+                            name="description" 
+                            rows="3"
+                            class="form-input"
+                            placeholder="Enter entity description"
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full">
+                        Create Entity
+                    </button>
+                </form>
+            </div>
+
+            <!-- Entities List Section -->
+            <div class="card">
+                <h2 class="text-xl font-semibold mb-4 text-white">Sample Entities</h2>
+                <div id="entities-container" class="space-y-4">
+                    <!-- Entities will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="mt-8 card">
+            <h2 class="text-xl font-semibold mb-4 text-white">Template Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                <div class="bg-gray-700 p-4 rounded">
+                    <h3 class="font-semibold text-blue-400 mb-2">Backend</h3>
+                    <ul class="text-gray-300 space-y-1">
+                        <li>• Spring Boot</li>
+                        <li>• Spring Data JPA</li>
+                        <li>• H2 Database</li>
+                        <li>• RESTful API</li>
+                        <li>• Global Exception Handler</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-4 rounded">
+                    <h3 class="font-semibold text-green-400 mb-2">Frontend</h3>
+                    <ul class="text-gray-300 space-y-1">
+                        <li>• Vanilla JavaScript</li>
+                        <li>• Tailwind CSS</li>
+                        <li>• Dark Mode</li>
+                        <li>• Responsive Design</li>
+                        <li>• API Client</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-4 rounded">
+                    <h3 class="font-semibold text-purple-400 mb-2">Architecture</h3>
+                    <ul class="text-gray-300 space-y-1">
+                        <li>• Generic CRUD Service</li>
+                        <li>• Base Entity</li>
+                        <li>• DTO Pattern</li>
+                        <li>• Repository Pattern</li>
+                        <li>• CORS Configuration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 border-t border-gray-700 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="text-center text-gray-400">
+                <p>&copy; 2024 Spring JPA JS Template. Built with Spring Boot and Tailwind CSS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/api-client.js"></script>
+    <script src="../js/sample-entity.js"></script>
+</body>
+</html>
