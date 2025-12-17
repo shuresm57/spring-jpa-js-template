@@ -31,7 +31,7 @@ public class SampleEntityController {
 
     @GetMapping("/{id}")
     public ResponseEntity<SampleEntityDTO> getEntityById(@PathVariable Long id) {
-        SampleEntity entity = sampleEntityService.findByIdOrThrow(id);
+        SampleEntity entity = sampleEntityService.findById(id);
         return ResponseEntity.ok(convertToDTO(entity));
     }
 
@@ -44,7 +44,7 @@ public class SampleEntityController {
 
     @PutMapping("/{id}")
     public ResponseEntity<SampleEntityDTO> updateEntity(@PathVariable Long id, @RequestBody SampleEntityDTO dto) {
-        sampleEntityService.findByIdOrThrow(id); // Check if exists
+        sampleEntityService.findById(id); // Check if exists
         SampleEntity entity = convertToEntity(dto);
         entity.setId(id);
         SampleEntity updatedEntity = sampleEntityService.save(entity);

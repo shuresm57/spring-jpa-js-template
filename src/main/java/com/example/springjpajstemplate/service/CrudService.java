@@ -21,12 +21,8 @@ public abstract class CrudService<T, ID> {
     public T save(T entity) {
         return repository.save(entity);
     }
-    
-    public Optional<T> findById(ID id) {
-        return repository.findById(id);
-    }
-    
-    public T findByIdOrThrow(ID id) {
+
+    public T findById(ID id) {
         return repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Entity not found with id: " + id));
     }
