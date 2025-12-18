@@ -11,9 +11,8 @@ Spring Boot template with JPA backend and vanilla JavaScript frontend.
 - Dark mode UI design
 
 ## Getting Started
-1. Run the application: `./mvnw spring-boot:run`
-2. Open browser: http://localhost:8080
-3. H2 Console: http://localhost:8080/h2-console (jdbc:h2:mem:testdb, user: sa, password: password)
+- Fork the repository to get started.
+- Open it in IntelliJ and select File -> Save as Template.
 
 ## API Endpoints
 - GET /api/sample-entities - Get all entities
